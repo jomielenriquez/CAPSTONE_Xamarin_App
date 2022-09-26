@@ -6,13 +6,11 @@
     <Grid
         RowSpacing="0"
         ColumnSpacing="0">
-        <StackLayout>
+        <StackLayout HorizontalOptions="FillAndExpand" Padding="0, 10, 0, 10" Spacing="0">
             <Label x:Name="lable_title"
                 Text="About"
-                FontSize="Large"
-                VerticalOptions="CenterAndExpand"
-                HorizontalOptions="CenterAndExpand" 
-                HorizontalTextAlignment="Center"/>
+                FontSize="Small"
+                LineBreakMode="CharacterWrap"/>
         </StackLayout>
 
         <!-- MODAL BACKGROUND LAYER -->
