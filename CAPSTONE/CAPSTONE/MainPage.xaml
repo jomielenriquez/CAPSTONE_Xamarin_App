@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CAPSTONE.MainPage">
+
+    <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness">
+            <On Platform="iOS" Value="0,20,0,0" />
+        </OnPlatform>
+    </ContentPage.Padding>
+
+    <Grid
+        RowSpacing="0"
+        ColumnSpacing="0">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="3*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="6*" />
+        </Grid.RowDefinitions>
+
+        <BoxView 
+            Grid.Row="0"
+            BackgroundColor="#00CCD6" />
+
+        <Image
+            Grid.Row="0"
+            Source="~/Resources/drawable/TMO.png"
+            VerticalOptions="Center"
+            HorizontalOptions="Center"
+            HeightRequest="150"
+            WidthRequest="150" />
+
+        <Label 
+            Grid.Row="1"
+            Text="LOGIN"
+            FontSize="Large"
+            HorizontalOptions="Center"
+            VerticalOptions="Center" />
+
+        <StackLayout                
+            Grid.Row="2"
+            VerticalOptions="Fill"
+            HorizontalOptions="Center"
+            Spacing="15">
+
+            <StackLayout HorizontalOptions="Center" Spacing="5">
+                <Label x:Name="lblUsername"
+                    Text="Username:" />
+                <Entry x:Name="entry_username"
+                    Placeholder="Username" 
+                    Keyboard="Email"
+                    WidthRequest="300" />
+            </StackLayout>
+
+            <StackLayout HorizontalOptions="Center" Spacing="5">
+                <Label
+                    Text="Password:" />
+                <Entry x:Name="entry_pass"
+                    Placeholder="Password"
+                    WidthRequest="300"
+                    IsPassword="True" />
+            </StackLayout>
+
+            <StackLayout HorizontalOptions="Center" Spacing="5">
+                <Button Text="LOGIN" Command="{ Binding LoginCommand }" Clicked="OnButtonLogin"/>
+            </StackLayout>
+
+        </StackLayout>
+
+
+        <!-- MODAL BACKGROUND LAYER -->
+        <BoxView x:Name="boxView"
+            Grid.Row="0"
+            Grid.RowSpan="3"
+            BackgroundColor="Black"
+            Opacity="0.8"
+            IsVisible="{ Binding IsLoading }" />
+
+        <ActivityIndicator x:Name="activityIndicator"
+            Grid.Row="0"
+            Grid.RowSpan="3"
+            VerticalOptions="Center"
+            HorizontalOptions="Center"
+            Color="White"
+            IsRunning="{ Binding IsLoading}" 
+            IsVisible="{ Binding IsLoading }" />
+
+        <!-- CANCEL BUTTON (appears after X seconds after login) -->
+        <StackLayout x:Name="stackLayout"
+            Grid.Row="0"
+            Grid.RowSpan="3"
+            VerticalOptions="Center"
+            TranslationY="100"
+            Margin="50,0"
+            IsVisible="{ Binding IsLoading }">
+            <Label 
+                Text="Loading.. Please wait.." 
+                FontSize="Small" 
+                TextColor="White"
+                LineBreakMode="WordWrap"
+                HorizontalOptions="Center"
+                HorizontalTextAlignment="Center"/>
+            <Button 
+                Text="Cancel"  
+                Clicked="OnButtonCancel"
+                HorizontalOptions="Center" />
+        </StackLayout>
+    </Grid>
+
+
+</ContentPage>
