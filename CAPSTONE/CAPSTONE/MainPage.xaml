@@ -49,6 +49,7 @@
                     Text="Username:" />
                 <Entry x:Name="entry_username"
                     Placeholder="Username" 
+                    Text="jomiel"
                     Keyboard="Email"
                     WidthRequest="300" />
             </StackLayout>
@@ -58,12 +59,13 @@
                     Text="Password:" />
                 <Entry x:Name="entry_pass"
                     Placeholder="Password"
+                    Text="jomiel"
                     WidthRequest="300"
                     IsPassword="True" />
             </StackLayout>
 
             <StackLayout HorizontalOptions="Center" Spacing="5">
-                <Button Text="LOGIN" Command="{ Binding LoginCommand }" Clicked="OnButtonLogin"/>
+                <Button Text="LOGIN" Clicked="OnButtonLogin"/>
             </StackLayout>
 
         </StackLayout>
