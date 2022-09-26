@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CAPSTONE.About"
+             Title="About">
+    <Grid
+        RowSpacing="0"
+        ColumnSpacing="0">
+        <StackLayout>
+            <Label x:Name="lable_title"
+                Text="About"
+                FontSize="Large"
+                VerticalOptions="CenterAndExpand"
+                HorizontalOptions="CenterAndExpand" 
+                HorizontalTextAlignment="Center"/>
+        </StackLayout>
+
+        <!-- MODAL BACKGROUND LAYER -->
+        <BoxView x:Name="boxView"
+            Grid.Row="0"
+            Grid.RowSpan="3"
+            BackgroundColor="Black"
+            Opacity="0.8"
+            IsVisible="{ Binding IsLoading }" />
+
+        <ActivityIndicator x:Name="activityIndicator"
+            Grid.Row="0"
+            Grid.RowSpan="3"
+            VerticalOptions="Center"
+            HorizontalOptions="Center"
+            Color="White"
+            IsRunning="{ Binding IsLoading}" 
+            IsVisible="{ Binding IsLoading }" />
+
+        <!-- CANCEL BUTTON (appears after X seconds after login) -->
+        <StackLayout x:Name="stackLayout"
+            Grid.Row="0"
+            Grid.RowSpan="3"
+            VerticalOptions="Center"
+            TranslationY="100"
+            Margin="50,0"
+            IsVisible="{ Binding IsLoading }">
+            <Label 
+                Text="Loading.. Please wait.." 
+                FontSize="Small" 
+                TextColor="White"
+                LineBreakMode="WordWrap"
+                HorizontalOptions="Center"
+                HorizontalTextAlignment="Center"/>
+            <Button 
+                Text="Cancel"  
+                Clicked="OnButtonCancel"
+                HorizontalOptions="Center" />
+        </StackLayout>
+    </Grid>
+</ContentPage>
