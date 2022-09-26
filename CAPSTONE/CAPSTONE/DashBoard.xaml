@@ -34,7 +34,7 @@
             </StackLayout>
         </StackLayout>
         <StackLayout HorizontalOptions="Center" Spacing="5" Grid.Row="1">
-            <Button x:Name="AddApprehension" Margin="10,5" Text="Add Apprehension" Clicked="OnButton_AddApprehension"/>
+            <Button x:Name="AddApprehension" Margin="10,5" Text="Record New Apprehension" Clicked="OnButton_AddApprehension"/>
             <Button x:Name="FinesOfApprehension" Margin="10,5" Text="Fines of Violation" Clicked="OnButton_FinesOfApprehension"/>
             <Button x:Name="About" Margin="10,5" Text="About" Clicked="OnButton_About"/>
             <Button x:Name="ApprehensionReports" Margin="10,5" Text="Apprehension Reports" Clicked="OnButton_ApprehensionReports"/>
