@@ -14,11 +14,12 @@ namespace CAPSTONE
     {
         LoginViewModel viewModel = new LoginViewModel();
 
-        public async Task<string> TestAsync()
+        public async Task<string> Login()
         {
             using (var client = new HttpClient())
             {
-                var uri = "http://www.capstone.somee.com/Systems/LoginUser?username="+ entry_username.Text + "&&password="+ entry_pass.Text + "&&acnttype=TENFORCER";
+                SystemRepository sysRepo = new SystemRepository();
+                var uri = sysRepo.GetLoginLink(entry_username.Text, entry_pass.Text);
                 var result = await client.GetStringAsync(uri);
 
                 //handling the answer  
@@ -63,7 +64,7 @@ namespace CAPSTONE
                 return;
             }
 
-            _ = TestAsync();
+            _ = Login();
         }
 
         public void OnButtonCancel(object sender, EventArgs args)

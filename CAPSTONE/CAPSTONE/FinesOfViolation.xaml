@@ -6,13 +6,28 @@
     <Grid
         RowSpacing="0"
         ColumnSpacing="0">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100*" />
+        </Grid.RowDefinitions>
+
         <StackLayout>
-            <Label x:Name="lable_title"
-                Text="Fines of Violation"
-                FontSize="Large"
-                VerticalOptions="CenterAndExpand"
-                HorizontalOptions="CenterAndExpand" 
-                HorizontalTextAlignment="Center"/>
+            <TableView>
+                <TableRoot>
+                    <TableSection x:Name="tblFines" TextColor="Blue">
+                        <ViewCell>
+                            <ViewCell.View>
+                                <StackLayout Orientation="Horizontal" Padding="13, 0">
+                                    <Label Text="Description" VerticalTextAlignment="Center" WidthRequest="250" FontAttributes="Bold"/>
+                                    <Label Text="Amount" VerticalTextAlignment="Center" FontAttributes="Bold"/>
+                                </StackLayout>
+                            </ViewCell.View>
+                        </ViewCell>
+
+                    </TableSection>
+                </TableRoot>
+            </TableView>
+
         </StackLayout>
 
         <!-- MODAL BACKGROUND LAYER -->
