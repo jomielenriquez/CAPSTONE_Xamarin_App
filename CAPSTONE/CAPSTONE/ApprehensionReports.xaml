@@ -6,13 +6,38 @@
     <Grid
         RowSpacing="0"
         ColumnSpacing="0">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100*" />
+        </Grid.RowDefinitions>
+
         <StackLayout>
-            <Label x:Name="lable_title"
-                Text="Apprehension Reports"
-                FontSize="Large"
-                VerticalOptions="CenterAndExpand"
-                HorizontalOptions="CenterAndExpand" 
-                HorizontalTextAlignment="Center"/>
+            <TableView HasUnevenRows="True">
+                <TableRoot>
+                    <TableSection x:Name="tblReport" TextColor="Blue">
+                        <!--<ViewCell>
+                            <ViewCell.View>
+                                <StackLayout Padding="13, 0">
+                                    <StackLayout Padding="13, 0" Orientation="Horizontal">
+                                        <Label Text="Description" VerticalTextAlignment="Center" WidthRequest="100" FontAttributes="Bold"/>
+                                        <Label Text="Amount" VerticalTextAlignment="Center" FontAttributes="Bold"/>
+                                    </StackLayout>
+                                    <StackLayout Padding="13, 0" Orientation="Horizontal">
+                                        <Label Text="Description" VerticalTextAlignment="Center" WidthRequest="100" FontAttributes="Bold"/>
+                                        <Label Text="Amount" VerticalTextAlignment="Center" FontAttributes="Bold"/>
+                                    </StackLayout>
+                                    <StackLayout Padding="13, 0" Orientation="Horizontal">
+                                        <Label Text="Description" VerticalTextAlignment="Center" WidthRequest="100" FontAttributes="Bold"/>
+                                        <Label Text="Amount" VerticalTextAlignment="Center" FontAttributes="Bold"/>
+                                    </StackLayout>
+                                </StackLayout>
+                            </ViewCell.View>
+                        </ViewCell>-->
+
+                    </TableSection>
+                </TableRoot>
+            </TableView>
+
         </StackLayout>
 
         <!-- MODAL BACKGROUND LAYER -->

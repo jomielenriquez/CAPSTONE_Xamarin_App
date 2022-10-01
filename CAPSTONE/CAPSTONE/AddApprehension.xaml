@@ -14,54 +14,48 @@
         </Grid.RowDefinitions>
 
         <StackLayout>
-            <!--<Label x:Name="lable_title"
-                Text="Add Apprehension Page"
-                FontSize="Large"
-                VerticalOptions="CenterAndExpand"
-                HorizontalOptions="CenterAndExpand" 
-                HorizontalTextAlignment="Center"/>-->
             <TableView>
                 <TableRoot>
                     <TableSection TextColor="Blue">
-                        <EntryCell Label="Last Name " Placeholder="Last Name" HorizontalTextAlignment="Center"/>
-                        <EntryCell Label="First Name" Placeholder="First Name" HorizontalTextAlignment="Center"/>
-                        <EntryCell Label="MI" Placeholder="MI" HorizontalTextAlignment="Center"/>
-                        <EntryCell Label="License No." Placeholder="License No." HorizontalTextAlignment="Center"/>
+                        <EntryCell x:Name="entry_lname" Label="Last Name " Placeholder="Last Name" HorizontalTextAlignment="Center" Text=""/>
+                        <EntryCell x:Name="entry_fname" Label="First Name" Placeholder="First Name" HorizontalTextAlignment="Center" Text=""/>
+                        <EntryCell x:Name="entry_mi" Label="MI" Placeholder="MI" HorizontalTextAlignment="Center" Text=""/>
+
+                        <EntryCell x:Name="entry_hn" Label="House No." Placeholder="House No." HorizontalTextAlignment="Center" Text=""/>
+                        <EntryCell x:Name="entry_subd" Label="Subdivision" Placeholder="Subdivision" HorizontalTextAlignment="Center" Text=""/>
+                        <EntryCell x:Name="entry_city" Label="City" Placeholder="City" HorizontalTextAlignment="Center"/>
+
+                        <EntryCell x:Name="entry_license" Label="License No." Placeholder="License No." HorizontalTextAlignment="Center" Text=""/>
                         <ViewCell>
                             <ViewCell.View>
                                 <StackLayout Orientation="Horizontal">
                                     <Label Text="Birth Date" VerticalOptions="Center" HorizontalTextAlignment="End"/>
-                                    <DatePicker/>
+                                    <DatePicker x:Name="datePicker_birthdate"/>
                                     <Label Text="Apprehension Date" VerticalOptions="Center" HorizontalTextAlignment="End" />
-                                    <DatePicker />
+                                    <DatePicker x:Name="datePicker_apprehensiodate"/>
                                 </StackLayout>
                             </ViewCell.View>
                         </ViewCell>
-                        <EntryCell Label="Place of Violation" Placeholder="Place of Violation" HorizontalTextAlignment="Center"/>
-                        <EntryCell Label="Vehicle Type" Placeholder="Vehicle Type" HorizontalTextAlignment="Center"/>
+                        <EntryCell x:Name="entry_placeofviolation" Label="Place of Violation" Placeholder="Place of Violation" HorizontalTextAlignment="Center"/>
+                        <EntryCell x:Name="entry_vehicletype" Label="Vehicle Type" Placeholder="Vehicle Type" HorizontalTextAlignment="Center"/>
                         <ViewCell>
                             <ViewCell.View>
                                 <StackLayout Orientation="Horizontal" Padding="13, 0">
                                     <Label Text="Classification" VerticalTextAlignment="Center"/>
-                                    <RadioButton Content="private" CheckedChanged="classification_Changed"/>
-                                    <RadioButton Content="public" CheckedChanged="classification_Changed"/>
+                                    <RadioButton Content="private" CheckedChanged="classification_Changed" FontSize="Small" FontAttributes="None" GroupName="Classification"/>
+                                    <RadioButton Content="public" CheckedChanged="classification_Changed" FontSize="Small" FontAttributes="None" GroupName="Classification"/>
                                 </StackLayout>
                             </ViewCell.View>
                         </ViewCell>
-                        <EntryCell Label="Plate No." Placeholder="Plate Number" HorizontalTextAlignment="Center"/>
+                        <EntryCell x:Name="entry_plateno" Label="Plate No." Placeholder="Plate Number" HorizontalTextAlignment="Center"/>
                         <ViewCell>
                             <ViewCell.View>
                                 <StackLayout Orientation="Horizontal" Padding="13, 0">
                                     <Label Text="Violation" VerticalOptions="Center"></Label>
-                                    <Picker Title="Select" WidthRequest="270" HorizontalTextAlignment="Center">
+                                    <Picker x:Name="Picker_Fines" FontSize="Small"
+                                        Title="Select" WidthRequest="270" HorizontalTextAlignment="Center">
                                         <Picker.Items>
-                                            <x:String>Baboon</x:String>
-                                            <x:String>Capuchin Monkey</x:String>
-                                            <x:String>Blue Monkey</x:String>
-                                            <x:String>Squirrel Monkey</x:String>
-                                            <x:String>Golden Lion Tamarin</x:String>
-                                            <x:String>Howler Monkey</x:String>
-                                            <x:String>Japanese Macaque</x:String>
+                                            <!--This is where the fines list should be inserted-->
                                         </Picker.Items>
                                     </Picker>
                                 </StackLayout>
@@ -70,7 +64,7 @@
                         <ViewCell>
                             <ViewCell.View>
                                 <StackLayout Orientation="Horizontal" Padding="13, 0">
-                                    <Button Text="Submit" Clicked="Printest"/>
+                                    <Button Text="Submit" Clicked="btn_Submit"/>
                                 </StackLayout>
                             </ViewCell.View>
                         </ViewCell>
