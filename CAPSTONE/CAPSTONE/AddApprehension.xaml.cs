@@ -317,7 +317,7 @@ namespace CAPSTONE
             To_Print = To_Print + "\n--------------------------------";
             To_Print = To_Print + "\n" + ALLINEA_CT + "You are herby sited for committing the traffic and administrative violation here under";
             To_Print = To_Print + "\n" + ALLINEA_SX + "Violation:" + ALLINEA_DX + enableEmp + violation + disableEmp;
-            To_Print = To_Print + "\n" + ALLINEA_CT + vamount;
+            To_Print = To_Print + "\n" + ALLINEA_CT + "P "+ vamount;
             To_Print = To_Print + "\n--------------------------------";
             To_Print = To_Print + "\n" + ALLINEA_CT + "You are hereby directed to report within 72 hours from date of apprehension to the City Fiscal's Office, City Treasure's Office, City Court, City Hall, Tanauan City";
             To_Print = To_Print + "\n--------------------------------";
