@@ -166,6 +166,7 @@ namespace CAPSTONE
             string vehicletype = entry_vehicletype.Text; // radio button
             string classification = radclassification;
             string plateno = entry_plateno.Text;
+            string vamount = GetViolationAmount(Picker_Fines.SelectedItem.ToString());
 
             LoadingModalVisibility(true);
 
@@ -180,7 +181,8 @@ namespace CAPSTONE
                 vehicletype,
                 classification,
                 plateno,
-                Picker_Fines.SelectedItem.ToString()
+                Picker_Fines.SelectedItem.ToString(),
+                vamount
             );
 
             //DisplayAlert("Message", "Success", "OK");
@@ -209,7 +211,8 @@ namespace CAPSTONE
             string vehicletype,
             string classification,
             string plateno,
-            string strviolation
+            string strviolation,
+            string vamount
         )
         {
             using (var client = new HttpClient())
@@ -252,7 +255,8 @@ namespace CAPSTONE
                         strviolation,
                         vehicletype,
                         classification,
-                        plateno
+                        plateno,
+                        vamount
                     );
 
                     entry_fname.Text = "";
@@ -289,7 +293,8 @@ namespace CAPSTONE
             string violation,
             string vehicletype,
             string classification,
-            string plateno
+            string plateno,
+            string vamount
             )
         {
             IPrintService service = DependencyService.Get<IPrintService>();
@@ -312,6 +317,7 @@ namespace CAPSTONE
             To_Print = To_Print + "\n--------------------------------";
             To_Print = To_Print + "\n" + ALLINEA_CT + "You are herby sited for committing the traffic and administrative violation here under";
             To_Print = To_Print + "\n" + ALLINEA_SX + "Violation:" + ALLINEA_DX + enableEmp + violation + disableEmp;
+            To_Print = To_Print + "\n" + ALLINEA_CT + vamount;
             To_Print = To_Print + "\n--------------------------------";
             To_Print = To_Print + "\n" + ALLINEA_CT + "You are hereby directed to report within 72 hours from date of apprehension to the City Fiscal's Office, City Treasure's Office, City Court, City Hall, Tanauan City";
             To_Print = To_Print + "\n--------------------------------";
@@ -399,6 +405,16 @@ namespace CAPSTONE
             }
 
             return "0"; // means violation is not in database.
+        }
+
+        public string GetViolationAmount(string str_violation)
+        {
+            foreach (Fines f in fines)
+            {
+                if (f.vamount == str_violation) return f.vid.ToString();
+            }
+
+            return "0.00"; // means violation is not in database.
         }
 
         public void Printest(object sender, EventArgs args)
