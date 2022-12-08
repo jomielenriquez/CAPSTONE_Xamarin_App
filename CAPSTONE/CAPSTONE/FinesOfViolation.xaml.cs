@@ -97,4 +97,9 @@ namespace CAPSTONE
         public string vdesc { get; set; }
         public string vamount { get; set; }
     }
+    public class Compound
+    {
+        public int cid { get; set; }
+        public string compound { get; set; }
+    }
 }

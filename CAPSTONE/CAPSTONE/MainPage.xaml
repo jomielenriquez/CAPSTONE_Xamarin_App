@@ -49,7 +49,7 @@
                     Text="Username:" />
                 <Entry x:Name="entry_username"
                     Placeholder="Username" 
-                    Text=""
+                    Text="enforcer"
                     Keyboard="Email"
                     WidthRequest="300" />
             </StackLayout>
@@ -59,7 +59,7 @@
                     Text="Password:" />
                 <Entry x:Name="entry_pass"
                     Placeholder="Password"
-                    Text=""
+                    Text="enforcer"
                     WidthRequest="300"
                     IsPassword="True" />
             </StackLayout>
