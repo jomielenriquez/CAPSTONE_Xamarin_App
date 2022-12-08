@@ -36,7 +36,22 @@
                                 </StackLayout>
                             </ViewCell.View>
                         </ViewCell>
-                        <EntryCell x:Name="entry_placeofviolation" Label="Place of Violation" Placeholder="Place of Violation" HorizontalTextAlignment="Center"/>
+                        <!--<EntryCell x:Name="entry_placeofviolation" Label="Place of Violation" Placeholder="Place of Violation" HorizontalTextAlignment="Center"/>-->
+                        <!--Place of Violation-->
+                        <ViewCell>
+                            <ViewCell.View>
+                                <StackLayout Orientation="Horizontal" Padding="13, 0">
+                                    <Label Text="Place of Violation" VerticalOptions="Center"></Label>
+                                    <Picker x:Name="Picker_Place" FontSize="Small"
+                                        Title="Select" WidthRequest="270" HorizontalTextAlignment="Center">
+                                        <Picker.Items>
+                                            <!--This is where the fines list should be inserted-->
+                                        </Picker.Items>
+                                    </Picker>
+                                </StackLayout>
+                            </ViewCell.View>
+                        </ViewCell>
+                        
                         <EntryCell x:Name="entry_vehicletype" Label="Vehicle Type" Placeholder="Vehicle Type" HorizontalTextAlignment="Center"/>
                         <ViewCell>
                             <ViewCell.View>
