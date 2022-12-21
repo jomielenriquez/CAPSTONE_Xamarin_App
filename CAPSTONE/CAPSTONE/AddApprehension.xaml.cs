@@ -274,7 +274,7 @@ namespace CAPSTONE
 
                 if(returnval == "SUCCESS")
                 {
-                    await DisplayAlert("Success", "Successfuly saved", "OK");
+                    await DisplayAlert("Success", "The Ticket is now printing", "OK");
                     await Navigation.PushAsync(new Apprehension_Reports(UID));
 
                     PrintCitation(
