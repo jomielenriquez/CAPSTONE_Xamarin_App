@@ -114,16 +114,17 @@ namespace CAPSTONE
                                     },
                                     Orientation = StackOrientation.Horizontal,
                                 },
-                                new StackLayout()
-                                {
-                                    Children =
-                                    {
-                                        new Label { Text = "Place of Violation", WidthRequest = width },
-                                        new Label { Text = ":"},
-                                        new Label { Text = r.placeofviolation},
-                                    },
-                                    Orientation = StackOrientation.Horizontal,
-                                },
+                                //WEB#57 Remove place of violation
+                                //new StackLayout()
+                                //{
+                                //    Children =
+                                //    {
+                                //        new Label { Text = "Place of Violation", WidthRequest = width },
+                                //        new Label { Text = ":"},
+                                //        new Label { Text = r.placeofviolation},
+                                //    },
+                                //    Orientation = StackOrientation.Horizontal,
+                                //},
                                 new StackLayout()
                                 {
                                     Children =
