@@ -193,7 +193,8 @@ namespace CAPSTONE
             string licneseno = entry_license.Text.ToUpper();
             string birthdate = datePicker_birthdate.Date.ToString("MMM d, yyyy");
             string dateofapprehension = datePicker_apprehensiodate.Date.ToString("MMM d, yyyy");
-            string placeofviolation = Picker_Place.SelectedItem.ToString();//entry_placeofviolation.Text;
+            //WEB#57 remove place of violation
+            string placeofviolation = "";// Picker_Place.SelectedItem.ToString();//entry_placeofviolation.Text;
             string violationid = GetViolationId(Picker_Fines.SelectedItem.ToString()); // need to get
             string vehicletype = entry_vehicletype.Text; // radio button
             string classification = radclassification;
@@ -344,7 +345,8 @@ namespace CAPSTONE
             To_Print = To_Print + "\n" + ALLINEA_SX + "Plate Number:" + ALLINEA_DX + enableEmp + plateno + disableEmp;
             To_Print = To_Print + "\n" + ALLINEA_SX + "Vehicle Type:" + ALLINEA_DX + enableEmp + vehicletype + disableEmp;
             To_Print = To_Print + "\n" + ALLINEA_SX + "Classification:" + ALLINEA_DX + enableEmp + classification + disableEmp;
-            To_Print = To_Print + "\n" + ALLINEA_SX + "Place of Violation:" + ALLINEA_DX + enableEmp + placeofviolation + disableEmp;
+            //WEB#57 remove all place of violation
+            //To_Print = To_Print + "\n" + ALLINEA_SX + "Place of Violation:" + ALLINEA_DX + enableEmp + placeofviolation + disableEmp;
             To_Print = To_Print + "\n" + ALLINEA_SX + "Date of Apprehension:" + ALLINEA_DX + enableEmp + dateofapprehension + disableEmp;
             To_Print = To_Print + "\n--------------------------------";
             To_Print = To_Print + "\n" + ALLINEA_CT + "You are hereby sited for committing the traffic and administrative violation here under";
@@ -398,10 +400,6 @@ namespace CAPSTONE
             {
                 isFilled = false;
             }
-            //if (entry_placeofviolation.Text == "" || entry_placeofviolation.Text == null)
-            //{
-            //    isFilled = false;
-            //}
             if (entry_vehicletype.Text == "" || entry_vehicletype.Text == null)
             {
                 isFilled = false;
@@ -416,7 +414,8 @@ namespace CAPSTONE
             }
             catch (Exception e)
             {
-                isFilled = false;
+                //WEB#57
+                //isFilled = false;
             }
             try
             {

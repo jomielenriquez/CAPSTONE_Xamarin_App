@@ -40,7 +40,7 @@
                         <!--Place of Violation-->
                         <ViewCell>
                             <ViewCell.View>
-                                <StackLayout Orientation="Horizontal" Padding="13, 0">
+                                <StackLayout Orientation="Horizontal" Padding="13, 0" IsVisible="false">
                                     <Label Text="Place of Violation" VerticalOptions="Center"></Label>
                                     <Picker x:Name="Picker_Place" FontSize="Small"
                                         Title="Select" WidthRequest="270" HorizontalTextAlignment="Center">
